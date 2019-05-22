@@ -331,33 +331,7 @@ int main()
 	int n, size_, iter;
 	char* m;
 	LL *a, *b, *M;
-	//ElGamal(p, g, x, y, str, n, size_, iter, m, M, a, b);
+	ElGamal(p, g, x, y, str, n, size_, iter, m, M, a, b);
 
-	cin >> p;
-	cin.ignore();
-    getline(cin, str);
-    n = str.length();
-    m = new char[n];
-    for (int i = 0; i < n; i++)
-    {
-        m[i] = str[i];
-    };
-    iter = floor(log_b(p, 10))/3;
-    size_ = ceil(1.0*n/iter);
-
-    cout << n << " " << size_ << " " << iter << endl;
-    M = new LL[n];
-    a = new LL[size_];
-    b = new LL[size_];
-
-    code(m, M, n, size_, iter);
-    for(int i = 0; i < size_; i++)
-    {
-        cout << M[i] << " ";
-    };
-    cout << endl;
-    decode(m, M, size_, iter, n);
-    for(int i = 0; i < n; i++)
-        cout << m[i];
 	return 0;
 }
